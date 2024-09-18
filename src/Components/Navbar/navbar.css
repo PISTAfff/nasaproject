@@ -1,0 +1,142 @@
+.Navbar {
+  padding: 1.5rem 2.125rem 1.5rem;
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  justify-content: space-between !important;
+  transition: 0.25s;
+  height: 115px;
+}
+.pista {
+  background-image: url("../../../public/Pista.jpg");
+}
+.Navbar:hover {
+  background-color: var(--main-color);
+}
+.Navbar.navOpened {
+  background-color: var(--main-color);
+}
+.Navbar.offTop {
+  transition: 0.25s;
+  background-color: var(--main-color);
+  height: 50px;
+}
+.Navbar::after {
+  transition: 0.25s;
+  content: "";
+  position: fixed;
+  display: flex;
+  width: 0%;
+  top: 50px;
+  left: 50%;
+  border-bottom: 1px solid var(--main-bg-color);
+}
+.Navbar.onTop::after {
+  transition: 0.25s;
+  content: "";
+  position: fixed;
+  display: flex;
+  width: 90%;
+  top: 115px;
+  left: 5%;
+  border-bottom: 1px solid var(--main-bg-color);
+}
+
+.Navbar.onTop:hover::after {
+  transition: 0.25s;
+  left: 50%;
+  width: 0%;
+}
+.Navbar.onTop.navOpened:hover::after {
+  transition: 0.25s;
+  content: "";
+  position: fixed;
+  display: flex;
+  width: 90%;
+  top: 115px;
+  left: 5%;
+  border-bottom: 1px solid var(--main-bg-color);
+}
+.Navbar.navOpened:hover::after {
+  transition: 0.25s;
+  content: "";
+  position: fixed;
+  display: flex;
+  width: 90%;
+  top: 50px;
+  left: 5%;
+  border-bottom: 1px solid var(--main-bg-color);
+}
+.LogoContainer {
+  cursor: pointer;
+  font-size: 25px;
+  font-weight: bolder;
+  font-family: monospace;
+  color: white;
+}
+li {
+  list-style-type: none;
+  text-wrap: nowrap;
+}
+.link {
+  transition: 0.25s;
+  color: white;
+  font-weight: 500;
+  font-size: 1.125rem;
+  text-decoration: none;
+}
+.link.offTop {
+  font-size: 0.875rem;
+}
+.link::after {
+  transition: 0.25s;
+  content: "";
+  background-color: white;
+  height: 2px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 0%;
+}
+.link:hover::after {
+  transition: 0.25s;
+  width: 100%;
+}
+.Expander {
+  transition: 0.25s;
+  height: 0;
+  opacity: 0;
+  user-select: none;
+  pointer-events: none;
+}
+.Expander > * {
+  pointer-events: all;
+}
+
+.Expanded {
+  transition: 0.25s;
+  opacity: 1;
+}
+.Expanded.blurred {
+  user-select: none;
+  pointer-events: all;
+  height: calc(100vh - 500px);
+  backdrop-filter: blur(5px);
+}
+.AboutSectionU {
+  border-right: 2px solid white;
+}
+.social {
+  transition: 0.25s;
+  background-color: white;
+  height: 2px;
+  width: 0px;
+  pointer-events: all;
+}
+.parentLink:hover > .social {
+  transition: 0.25s;
+  background-color: white;
+  height: 2px;
+  width: 100%;
+}

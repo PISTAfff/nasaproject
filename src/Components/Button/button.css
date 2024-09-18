@@ -1,0 +1,13 @@
+.Btn {
+  outline: none;
+  border: none;
+  font-weight: bold;
+  border-radius: 36px;
+  box-shadow: none;
+  font-family: monospace;
+  padding: 0;
+  pointer-events: all;
+}
+.Btn:hover > .p-2 {
+  padding: 0.5rem 1rem !important;
+}
