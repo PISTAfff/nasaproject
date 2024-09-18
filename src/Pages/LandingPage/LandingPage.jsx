@@ -42,7 +42,7 @@ const LandingPage = () => {
                     <Button onClick={() => {
                         location.href = "/Map"
                     }}
-                        text="Explore" bgColor="var(--main-color)" color="white" />
+                        text="Explore More" bgColor="var(--main-color)" color="white" />
                 </div>
             </div>
             <div className='dfCcc section'>
