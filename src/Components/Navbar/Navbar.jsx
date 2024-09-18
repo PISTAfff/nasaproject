@@ -5,7 +5,7 @@ import "./navbar.css"
 import Button from '../Button/Button';
 const Navbar = () => {
     const [onTop, setOnTop] = useState(location.pathname === "/");
-    const [navOpened, setNavOpened] = useState("About");
+    const [navOpened, setNavOpened] = useState("");
     useEffect(() => {
         const handleScroll = () => {
             if (location.pathname === "/") {
