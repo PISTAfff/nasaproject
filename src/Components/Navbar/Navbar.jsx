@@ -121,8 +121,7 @@ const Navbar = () => {
                                 padding: "0 50px",
                                 maxHeight: "75px",
                             }}>
-                                Contributed extensively to the development and design of the website, with a focus on creating an intuitive and visually appealing user interface (UI). Ensured that the design is user-centric, responsive, and aligned with modern web design standards to enhance the overall user experience.
-                            </p>
+                                an 18-year-old professional software and game developer studying at New Cairo Technological University. I’ve developed over 20 games showcased on my Itch.io page and love exploring new challenges and solutions.                            </p>
                             <ul className='w-100 dfcc text-white justify-content-around'>
                                 {myLinks.map((link, index) => (
                                     <div className='parentLink dfCcc' onClick={() => {
