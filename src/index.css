@@ -8,6 +8,7 @@
   --transparent-black: #21212150;
 }
 * {
+  user-select: none;
   font-family: "Roboto", sans-serif;
   scrollbar-width: none;
   -ms-overflow-style: none;

@@ -4,7 +4,7 @@
   position: fixed;
   top: 0;
   justify-content: space-between !important;
-  transition: 0.25s;
+  transition: 0.5s;
   height: 115px;
 }
 .pista {
@@ -17,12 +17,12 @@
   background-color: var(--main-color);
 }
 .Navbar.offTop {
-  transition: 0.25s;
+  transition: 0.5s;
   background-color: var(--main-color);
   height: 50px;
 }
 .Navbar::after {
-  transition: 0.25s;
+  transition: 0.5s;
   content: "";
   position: fixed;
   display: flex;
@@ -32,7 +32,7 @@
   border-bottom: 1px solid var(--main-bg-color);
 }
 .Navbar.onTop::after {
-  transition: 0.25s;
+  transition: 0.5s;
   content: "";
   position: fixed;
   display: flex;
@@ -43,12 +43,12 @@
 }
 
 .Navbar.onTop:hover::after {
-  transition: 0.25s;
+  transition: 0.5s;
   left: 50%;
   width: 0%;
 }
 .Navbar.onTop.navOpened:hover::after {
-  transition: 0.25s;
+  transition: 0.5s;
   content: "";
   position: fixed;
   display: flex;
@@ -58,7 +58,7 @@
   border-bottom: 1px solid var(--main-bg-color);
 }
 .Navbar.navOpened:hover::after {
-  transition: 0.25s;
+  transition: 0.5s;
   content: "";
   position: fixed;
   display: flex;
@@ -79,7 +79,7 @@ li {
   text-wrap: nowrap;
 }
 .link {
-  transition: 0.25s;
+  transition: 0.5s;
   color: white;
   font-weight: 500;
   font-size: 1.125rem;
@@ -89,7 +89,7 @@ li {
   font-size: 0.875rem;
 }
 .link::after {
-  transition: 0.25s;
+  transition: 0.5s;
   content: "";
   background-color: white;
   height: 2px;
@@ -100,11 +100,11 @@ li {
   width: 0%;
 }
 .link:hover::after {
-  transition: 0.25s;
+  transition: 0.5s;
   width: 100%;
 }
 .Expander {
-  transition: 0.25s;
+  transition: 0.5s;
   height: 0;
   opacity: 0;
   user-select: none;
@@ -115,7 +115,7 @@ li {
 }
 
 .Expanded {
-  transition: 0.25s;
+  transition: 0.5s;
   opacity: 1;
 }
 .Expanded.blurred {
@@ -128,14 +128,14 @@ li {
   border-right: 2px solid white;
 }
 .social {
-  transition: 0.25s;
+  transition: 0.5s;
   background-color: white;
   height: 2px;
   width: 0px;
   pointer-events: all;
 }
 .parentLink:hover > .social {
-  transition: 0.25s;
+  transition: 0.5s;
   background-color: white;
   height: 2px;
   width: 100%;

@@ -20,7 +20,7 @@ const Navbar = () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
-    const links = ["About", "Map"];
+    const links = [["Home", "/"], ["About", ""], ["Map", "/Map"]];
     const myLinks = [["Linkedin", "https://www.linkedin.com/in/abdelrahman-yehia-08803a225/", "fa-brands fa-linkedin"], ["Github", "https://github.com/PISTAfff", "fa-brands fa-github"], ["Discord", "⎠⎝𝙿𝙸𝚂𝚃𝙰⎠⎝", "fa-brands fa-discord"]];
     return (
         <div
@@ -36,6 +36,7 @@ const Navbar = () => {
                     padding: '0px 50px',
                 }}
                 onMouseEnter={() => setNavOpened("")}
+                onClick={() => { location.href = "/" }}
             >
                 <Logo width={onTop ? 75 : 100} height={onTop ? 75 : 100} top={onTop ? 0 : "20px"} />
                 Space Tech
@@ -53,22 +54,19 @@ const Navbar = () => {
                                 padding: '10px 20px',
                                 cursor: 'pointer',
                             }}
-                            onClick={() => setNavOpened((prev) => {
-                                if (prev === link) {
-                                    return "";
-                                } else {
-                                    return link
-                                }
-                            })}
-                            onMouseEnter={() => setNavOpened(link)}
+                            onClick={() => {
+                                if (link[1])
+                                    location.href = link[1];
+                            }}
+                            onMouseEnter={() => setNavOpened(link[0])}
                         >
-                            {link}
+                            {link[0]}
                         </li>
                     ))}
                 </ul>
             </div>
             <div
-                className={`${navOpened !== "" && "Expanded"} Expander dfsc position-absolute w-100`}
+                className={`${navOpened == "About" && "Expanded"} Expander dfsc position-absolute w-100`}
                 style={{
                     top: onTop ? 115 : 50,
                     left: 0,
@@ -151,14 +149,13 @@ const Navbar = () => {
                 }
             </div>
             <div
-                className={`${navOpened !== "" && "Expanded"} transition pointer Expander blurred dfsc position-absolute w-100`}
+                className={`${navOpened == "About" && "Expanded"} transition pointer Expander blurred dfsc position-absolute w-100`}
                 style={{
                     top: onTop ? 115 + 500 : 50 + 500,
                     left: 0,
                 }}
                 onMouseEnter={() => { setNavOpened(""); }}
             >
-
             </div>
         </div>
     )
