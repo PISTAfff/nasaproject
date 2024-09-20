@@ -16,16 +16,24 @@
   width: 75%;
   height: 100%;
 }
+.mapsvg-path {
+  transition: 0.15s;
+  fill: rgb(255, 173, 67);
+}
+.mapsvg-path:hover {
+  transition: 0.15s;
+  cursor: pointer;
+  fill: rgb(236, 219, 253);
+}
 .Map {
   height: 100%;
   grid-row: 1;
   grid-column: 1;
   position: relative;
   top: 5%;
-  background-image: url("/public/Egypt/Egypt.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+}
+.map {
+  scale: 1.4;
 }
 .CurrentArea,
 .AreaInfo {
