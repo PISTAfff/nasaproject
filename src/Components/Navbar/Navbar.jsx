@@ -3,12 +3,14 @@ import { toast } from 'react-hot-toast';
 import Logo from '../Logo';
 import "./navbar.css"
 import Button from '../Button/Button';
+import { Link } from 'react-router-dom';
+
 const Navbar = () => {
     const [onTop, setOnTop] = useState(location.pathname === "/");
     const [navOpened, setNavOpened] = useState("");
     useEffect(() => {
         const handleScroll = () => {
-            if (location.pathname === "/") {
+            if (location.pathname === "/" || location.pathname === "/Home") {
                 setOnTop(window.scrollY === 0);
             } else {
                 setOnTop(false);
@@ -36,7 +38,6 @@ const Navbar = () => {
                     padding: '0px 50px',
                 }}
                 onMouseEnter={() => setNavOpened("")}
-                onClick={() => { location.href = "/" }}
             >
                 <Logo width={onTop ? 75 : 100} height={onTop ? 75 : 100} top={onTop ? 0 : "20px"} />
                 Space Tech
@@ -54,13 +55,12 @@ const Navbar = () => {
                                 padding: '10px 20px',
                                 cursor: 'pointer',
                             }}
-                            onClick={() => {
-                                if (link[1])
-                                    location.href = link[1];
-                            }}
                             onMouseEnter={() => setNavOpened(link[0])}
+                            onMouseLeave={() => setNavOpened("")}
                         >
-                            {link[0]}
+                            <Link className='navlink' to={`${link[1] != "" ? link[0] : ""}`}>
+                                {link[0]}
+                            </Link>
                         </li>
                     ))}
                 </ul>

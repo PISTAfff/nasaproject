@@ -7,12 +7,17 @@
   --border-color: #5a5a5a55;
   --transparent-black: #21212150;
 }
+.navlink {
+  text-decoration: none;
+  color: white;
+}
 * {
   user-select: none;
-  font-family: "Roboto", sans-serif;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  font-family: "Roboto", sans-serif;
 }
+
 .bg {
   background-color: var(--main-bg-color);
 }

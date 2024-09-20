@@ -10,10 +10,10 @@ const MapPage = () => {
         ["This Area Has A Negative Reason 1", "This Area Has A Negative Reason 2"],
     ])
     return (
-        <div className='MapPage dfsc'>
+        <div className=' MapPage dfsc'>
             <div className='MapArea dfcc w-75 h-100'>
-                <div className='Maps w-75 h-75 bg-black'>
-
+                <div className='Maps'>
+                    <div className="Map" alt="" />
                 </div>
                 <span className='CurrentArea'>
                     Cairo
@@ -36,7 +36,7 @@ const MapPage = () => {
                     </ul>
                 </span>
             </div>
-            <div className='RightArea bg-white h-100 w-25 dfCsc justify-content-between'>
+            <div className='RightArea bg-white w-25 dfCsc justify-content-between'>
                 <header className='w-100 fw-bolder fs-1 dfCcc py-5'
                     style={{
                         fontFamily: "monospace",

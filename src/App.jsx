@@ -10,6 +10,7 @@ export default function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/Home" element={<LandingPage />} />
         <Route path="/Map" element={<MapPage />} />
       </Routes>
     </>
