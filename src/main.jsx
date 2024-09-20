@@ -6,10 +6,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 import { Toaster } from 'react-hot-toast';
 import i18n from './Utils/i18n.js';
-
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>,
     <Toaster
       reverseOrder
       toastOptions={{

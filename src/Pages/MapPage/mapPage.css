@@ -1,0 +1,93 @@
+.MapPage {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.MapArea {
+  color: black;
+}
+.Maps {
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: 1;
+  width: 90%;
+}
+.Map {
+  grid-row: 1;
+  grid-column: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.CurrentArea,
+.AreaInfo {
+  position: absolute;
+  top: 75px;
+  padding-left: 25px;
+  left: 0;
+}
+.AreaInfo {
+  padding-left: 0;
+  left: calc(72.25% - 25px);
+}
+.IconBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  position: relative;
+  left: -25px;
+  height: calc(100vh - 25%);
+}
+.IconBar li {
+  transition: 0.25s;
+  position: relative;
+  left: -90%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.15rem;
+}
+.IconBar li:hover {
+  transition: 0.25s;
+  border-radius: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.308);
+}
+.IconBar li.Active {
+  transition: 0.25s;
+  border-radius: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.308);
+}
+.RightArea {
+  -webkit-box-shadow: -10px 0px 50px 1px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: -10px 0px 50px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: -10px 0px 50px 1px rgba(0, 0, 0, 0.15);
+}
+.RightArea > span {
+  text-align: center;
+}
+.ButtonContainer {
+  margin-bottom: 25px;
+}
+.Button {
+  transition: 0.25s;
+  outline: none;
+  border: none;
+}
+.Button:hover {
+  transition: 0.25s;
+  scale: 1.05;
+  -webkit-box-shadow: 0px 0px 13px 4px var(--main-color);
+  -moz-box-shadow: 0px 0px 13px 4px var(--main-color);
+  box-shadow: 0px 0px 13px 4px var(--main-color);
+}
+.Button.Cancel:hover {
+  transition: 0.25s;
+  -webkit-box-shadow: 0px 0px 13px 4px var(--border-color);
+  -moz-box-shadow: 0px 0px 13px 4px var(--border-color);
+  box-shadow: 0px 0px 13px 4px var(--border-color);
+}
