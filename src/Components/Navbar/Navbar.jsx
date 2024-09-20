@@ -7,28 +7,25 @@ import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 const Navbar = () => {
     const location = useLocation();
-    const [onTop, setOnTop] = useState(location.pathname === "/");
+    const [onTop, setOnTop] = useState(location.pathname === "/" || location.pathname === "/Home");
     const [navOpened, setNavOpened] = useState("");
     useEffect(() => {
+        if (location.pathname !== "/" && location.pathname !== "/Home") {
+            setOnTop(false);
+        } else {
+            setOnTop(true);
+        }
         const handleScroll = () => {
             if (location.pathname === "/" || location.pathname === "/Home") {
                 setOnTop(window.scrollY === 0);
             } else {
                 setOnTop(false);
             }
-
         };
         window.addEventListener('scroll', handleScroll);
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, []);
-    useEffect(() => {
-        if (location.pathname === "/" || location.pathname === "/Home") {
-            setOnTop(true);
-        } else {
-            setOnTop(false);
-        }
     }, [location]);
     const links = [["Home", "/"], ["About", ""], ["Map", "/Map"]];
     const myLinks = [["Linkedin", "https://www.linkedin.com/in/abdelrahman-yehia-08803a225/", "fa-brands fa-linkedin"], ["Github", "https://github.com/PISTAfff", "fa-brands fa-github"], ["Discord", "⎠⎝𝙿𝙸𝚂𝚃𝙰⎠⎝", "fa-brands fa-discord"]];
@@ -63,8 +60,7 @@ const Navbar = () => {
                                 padding: '10px 20px',
                                 cursor: 'pointer',
                             }}
-                            onMouseEnter={() => setNavOpened(link[0])}
-                            onMouseLeave={() => setNavOpened("")}
+                            onMouseEnter={() => setNavOpened(link[1] == "" ? link[0] : "")}
                         >
                             <Link className='navlink p-4 px-3' to={`${link[1] != "" ? link[0] : ""}`}>
                                 {link[0]}

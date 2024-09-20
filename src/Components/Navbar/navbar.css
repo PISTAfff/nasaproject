@@ -13,13 +13,13 @@
 .Navbar:hover {
   background-color: var(--main-color);
 }
-.Navbar.navOpened {
-  background-color: var(--main-color);
-}
 .Navbar.offTop {
   transition: 0.5s;
   background-color: var(--main-color);
   height: 50px;
+}
+.Navbar.navOpened {
+  background-color: var(--main-color);
 }
 .Navbar::after {
   transition: 0.5s;
