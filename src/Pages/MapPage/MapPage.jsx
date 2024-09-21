@@ -61,7 +61,7 @@ const MapPage = () => {
                 const ratio = (value - min) / (max - min);
                 const r = Math.round(Math.max(0, Math.min(255, 255 - ratio * 255)));
                 const g = Math.round(Math.max(0, Math.min(255, ratio * 255)));
-                $("#" + governorate[0]).attr("style", `fill: rgb(${SwitchIT ? r : g},${SwitchIT ? g : r}, 0)`);
+                $("#" + governorate[0]).attr("style", `fill: rgb(${SwitchIT ? r : g},${(SwitchIT ? g : r) + (filter == 5 || filter == 6 ? 50 : 0)}, 0)`);
             });
 
         }
