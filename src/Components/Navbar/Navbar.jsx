@@ -81,7 +81,7 @@ const Navbar = () => {
             >
                 {navOpened == "About" &&
                     <div className='w-100 h-100 dfcc'>
-                        <div className=' start gap-5 text-white AboutSectionU dfCcc align-items-start w-50 h-75'>
+                        <div className=' start gap-5 text-white AboutSectionU dfCcc w-50 h-75'>
                             <h1 style={{
                                 padding: "0 50px",
                             }}>
@@ -106,8 +106,31 @@ const Navbar = () => {
                                 />
                             </div>
                         </div>
-                        <div className='dfCsc w-50 h-100 gap-4'>
-                            <div
+                        <div className=' start gap-5 text-white  dfCcc  w-50 h-75'>
+                            <h1 style={{
+                                padding: "0 50px",
+                            }}>
+                                ABOUT THE SITE
+                            </h1>
+                            <p
+                                className='w-75'
+                                style={{
+                                    padding: "0 50px"
+                                }}
+                            >
+                                Welcome to Egypt Governorate Data Monitor, your comprehensive source for real-time insights and detailed reports on various metrics across Egypt's governorates. Our platform provides an intuitive interface to explore vital data, including temperature, humidity, wind speed, air pressure, vehicle counts, and population statistics.
+                            </p>
+                            <div className='start' style={{
+                                padding: "0 50px",
+                            }}>
+                                <Button
+                                    onClick={() => location.href = "https://mail.google.com/mail/u/0/?fs=1&to=freeaccforu98@gmail.com&tf=cm"}
+                                    text="Map"
+                                    bgColor="var(--secondary-color)"
+                                    color="white"
+                                />
+                            </div>
+                            {/* <div
                                 className='start pista rounded-circle bg-black dfcc mt-5'
                                 style={{
                                     backgroundSize: "cover",
@@ -147,7 +170,8 @@ const Navbar = () => {
                                         <div className='dfcc social' />
                                     </div>
                                 ))}
-                            </ul>
+                            </ul> */}
+
                         </div>
                     </div>
                 }

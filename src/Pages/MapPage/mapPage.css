@@ -23,7 +23,7 @@
 .mapsvg-path:hover {
   transition: 0.15s;
   cursor: pointer;
-  fill: rgb(236, 219, 253);
+  fill: rgb(37, 37, 37) !important;
 }
 .Map {
   height: 100%;
