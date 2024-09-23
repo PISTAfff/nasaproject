@@ -458,7 +458,7 @@ const MapPage = () => {
                             }}
                             onClick={() => getRandomReport("")}
                         >
-                            Get A Random Report
+                            Get A Random Region
                         </button>
                     </div>
                     :
@@ -485,15 +485,26 @@ const MapPage = () => {
                                 </li>
                             ))}
                         </ul>
-                        <button className='Button py-2 px-3 rounded-2'
-                            style={{
-                                backgroundColor: "var(--main-color)",
-                                color: "var(--main-bg-color)",
-                            }}
-                            onClick={() => CreateReport(ActivatedGov)}
-                        >
-                            Create Report
-                        </button>
+                        <div className='w-100 dfcc justify-content-between px-4'>
+                            <button className='Button Cancel py-2 px-3 rounded-2'
+                                style={{
+                                    color: "black",
+                                    backgroundColor: "var(--border-color)",
+                                }}
+                                onClick={() => { setActivatedGov(""); setReport(""); }}
+                            >
+                                Cancel
+                            </button>
+                            <button className='Button py-2 px-3 rounded-2'
+                                style={{
+                                    backgroundColor: "var(--main-color)",
+                                    color: "var(--main-bg-color)",
+                                }}
+                                onClick={() => CreateReport(ActivatedGov)}
+                            >
+                                Create Report
+                            </button>
+                        </div>
                     </div>
                 :
                 <div className='RightArea bg-white w-25 dfCsc justify-content-between'>
