@@ -5,8 +5,12 @@ import "./navbar.css"
 import Button from '../Button/Button';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 const Navbar = () => {
     const location = useLocation();
+    const navigate = useNavigate();
+
     const [onTop, setOnTop] = useState(location.pathname === "/" || location.pathname === "/Home");
     const [navOpened, setNavOpened] = useState("");
     useEffect(() => {
@@ -99,7 +103,7 @@ const Navbar = () => {
                                 padding: "0 50px",
                             }}>
                                 <Button
-                                    onClick={() => location.href = "https://mail.google.com/mail/u/0/?fs=1&to=freeaccforu98@gmail.com&tf=cm"}
+                                    onClick={() => window.location.href = 'https://mail.google.com/mail/u/0/?fs=1&to=freeaccforu98@gmail.com&tf=cm'}
                                     text="Contact Us"
                                     bgColor="var(--secondary-color)"
                                     color="white"
@@ -124,7 +128,7 @@ const Navbar = () => {
                                 padding: "0 50px",
                             }}>
                                 <Button
-                                    onClick={() => location.href = "https://mail.google.com/mail/u/0/?fs=1&to=freeaccforu98@gmail.com&tf=cm"}
+                                    onClick={() => navigate("/Map", { replace: true })}
                                     text="Map"
                                     bgColor="var(--secondary-color)"
                                     color="white"
