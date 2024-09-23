@@ -4,14 +4,6 @@ import { Typewriter } from 'react-simple-typewriter'
 import Button from '../../Components/Button/Button'
 import toast from 'react-hot-toast'
 const LandingPage = () => {
-
-    const handleType = (count) => {
-        // console.log(count)
-    }
-    const handleDone = () => {
-        // console.log(`Done after 5 loops!`)
-    }
-
     return (
         <div className='landingPageContainer dfCcc' style={{
             width: "100%",
@@ -44,9 +36,6 @@ const LandingPage = () => {
                     }}
                         text="Explore More" bgColor="var(--main-color)" color="white" />
                 </div>
-            </div>
-            <div className='dfCcc section'>
-
             </div>
         </div>
     )

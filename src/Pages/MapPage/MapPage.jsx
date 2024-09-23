@@ -438,6 +438,18 @@ const MapPage = () => {
                         >
                             Choose a Region
                         </header>
+                        <select className='pointer px-3 py-2 mt-3 rounded-2 w-75'
+                            style={{
+                                backgroundColor: "var(--main-color)",
+                                color: "var(--main-bg-color)",
+                            }}
+                            onChange={(e) => setActivatedGov(e.target.value)}
+                        >
+                            <option value="">Choose a Region</option>
+                            {Object.keys(rawdata).map((gov, index) => (
+                                <option key={index} value={gov}>{gov}</option>
+                            ))}
+                        </select>
                         <p className='py-4 fw-bolder'>or</p>
                         <button className='Button py-2 mt-3 px-3 rounded-2'
                             style={{
