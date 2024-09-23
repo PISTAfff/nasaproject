@@ -25,8 +25,6 @@ const LandingPage = () => {
                             typeSpeed={100}
                             deleteSpeed={25}
                             delaySpeed={2000}
-                            onLoopDone={handleDone}
-                            onType={handleType}
                         />
                     </div>
                     <p>
