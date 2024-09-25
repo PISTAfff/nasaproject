@@ -44,7 +44,9 @@ const LandingPage = () => {
                     width: "35%"
                 }}>
                     <header className='dfsc w-50 fs-1 fw-bolder'>Climate</header>
-                    <p className='fs-5 w-75 dfsc '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, vero sint quibusdam sequi sunt magnam nisi consectetur a ad vel est minus modi suscipit libero, doloremque aperiam iusto hic! Deleniti!</p>
+                    <p className='fs-5 w-75 dfsc '>
+                        A video About Climate Awareness : Together To Improve The Enviroment
+                    </p>
                 </div>
                 <video controls className='VideoArea' style={{
                     pointerEvents: "all",
@@ -73,7 +75,6 @@ const LandingPage = () => {
                         text="Check it out" bgColor="var(--main-color)" color="white" />
                 </div>
                 <div className='section3Img'>
-                    .
                 </div>
             </div>
             <div className='dfcc justify-content-around mt-5'>
@@ -82,7 +83,12 @@ const LandingPage = () => {
                     width: "50%"
                 }}>
                     <header className='dfsc w-50 fs-1 fw-bolder'>Our Planet</header>
-                    <p className='fs-5 w-75 dfsc '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, vero sint quibusdam sequi sunt magnam nisi consectetur a ad vel est minus modi suscipit libero, doloremque aperiam iusto hic! Deleniti!</p>
+                    <p className='fs-5 dfsc '
+                        style={{
+                            width: "100vw",
+                        }}>
+                        Learn About Your planet, See How You may be damaging it
+                    </p>
                 </div>
             </div>
         </div>
