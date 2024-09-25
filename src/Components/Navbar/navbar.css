@@ -8,6 +8,8 @@
   height: 115px;
 }
 .pista {
+  width: 150px !important;
+  height: 150px !important;
   background-image: url("../../../public/Pista.jpg");
 }
 .Navbar:hover {

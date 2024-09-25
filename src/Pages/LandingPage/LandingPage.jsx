@@ -69,8 +69,7 @@ const LandingPage = () => {
                         its all About Saving Your Planet !
                     </p>
                     <Button onClick={() => {
-                        //Download The Game
-                        toast("Game Is Under development")
+                        window.location.href = 'https://mega.nz/file/8nkQQahS#PDaO_iPyPGj-zSpuGyy9mTQNonjGxLXIsBssefSW64o';
                     }}
                         text="Check it out" bgColor="var(--main-color)" color="white" />
                 </div>
