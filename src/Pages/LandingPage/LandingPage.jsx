@@ -56,7 +56,7 @@ const LandingPage = () => {
                     <source src='/public/Video.mp4' style={{
                         pointerEvents: "all",
                         userSelect: "all"
-                    }} type="video/mp4" />
+                    }} type="Video/mp4" />
                 </video>
             </div>
             <div className='section section3 dfcc px-5'>
