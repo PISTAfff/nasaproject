@@ -40,3 +40,46 @@
   font-size: 65px;
   font-weight: bolder;
 }
+.section2 {
+  background-image: url("/public/magla.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 35%;
+  height: 90vh;
+}
+.rightBorder {
+  border-right: 1px solid black;
+}
+.section3 {
+  background-color: black;
+  background-image: url("/public/Hero2.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-box-shadow: inset 400px 0px 300px -66px rgba(0, 0, 0, 1);
+  -moz-box-shadow: inset 400px 0px 300px -66px rgba(0, 0, 0, 1);
+  box-shadow: inset 400px 0px 300px -66px rgba(0, 0, 0, 1);
+}
+.section3::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.25;
+  pointer-events: none;
+}
+.section3Img {
+  width: 50vw;
+  height: 50vh;
+  border-radius: 1rem;
+  background-color: black;
+  background-image: url("/public/Game.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.VideoArea {
+  border-radius: 1rem;
+}

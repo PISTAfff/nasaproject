@@ -48,6 +48,7 @@ const Navbar = () => {
                 }}
                 onMouseEnter={() => setNavOpened("")}
             >
+                {/* <img src="/public/Logo2.svg" className='w-50 h-50 dfcc' /> */}
                 <Logo width={onTop ? 75 : 100} height={onTop ? 75 : 100} top={onTop ? 0 : "20px"} />
                 Space Tech
             </div>

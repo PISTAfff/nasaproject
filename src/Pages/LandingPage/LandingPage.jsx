@@ -39,6 +39,52 @@ const LandingPage = () => {
                         text="Explore More" bgColor="var(--main-color)" color="white" />
                 </div>
             </div>
+            <div className="section dfcc  justify-content-around px-5">
+                <div className='dfCcc h-100 gap-5 rightBorder align-items-start' style={{
+                    width: "35%"
+                }}>
+                    <header className='dfsc w-50 fs-1 fw-bolder'>Climate</header>
+                    <p className='fs-5 w-75 dfsc '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, vero sint quibusdam sequi sunt magnam nisi consectetur a ad vel est minus modi suscipit libero, doloremque aperiam iusto hic! Deleniti!</p>
+                </div>
+                <video controls className='VideoArea' style={{
+                    pointerEvents: "all",
+                    userSelect: "all",
+                    width: "50%"
+                }} >
+                    <source src='/public/Video.mp4' style={{
+                        pointerEvents: "all",
+                        userSelect: "all"
+                    }} type="video/mp4" />
+                </video>
+            </div>
+            <div className='section section3 dfcc px-5'>
+                <div className='dfCcc px-5 h-100 gap-5 align-items-start text-white' style={{
+                    width: "50%"
+                }}>
+                    <header className='dfsc w-50 fs-1 fw-bolder'>Try Our Game!</header>
+                    <p className='fs-5 w-75 dfsc '>
+                        We Made A Little Game For You To Play.
+                        its all About Saving Your Planet !
+                    </p>
+                    <Button onClick={() => {
+                        //Download The Game
+                        toast("Game Is Under development")
+                    }}
+                        text="Check it out" bgColor="var(--main-color)" color="white" />
+                </div>
+                <div className='section3Img'>
+                    .
+                </div>
+            </div>
+            <div className='dfcc justify-content-around mt-5'>
+                <div className='section2 w-50 rightBorder'></div>
+                <div className='dfCcc px-5 h-100 gap-5 align-items-start' style={{
+                    width: "50%"
+                }}>
+                    <header className='dfsc w-50 fs-1 fw-bolder'>Our Planet</header>
+                    <p className='fs-5 w-75 dfsc '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, vero sint quibusdam sequi sunt magnam nisi consectetur a ad vel est minus modi suscipit libero, doloremque aperiam iusto hic! Deleniti!</p>
+                </div>
+            </div>
         </div>
     )
 }
