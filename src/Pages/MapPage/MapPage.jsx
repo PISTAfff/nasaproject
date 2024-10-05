@@ -9,7 +9,7 @@ const MapPage = () => {
     const [curGov, setCurGov] = useState("");
     const [IconsState, setIconsState] = useState(-1);
     const Icons = [
-        ["fa-solid  fa-fire", false, "fa-regular  fa-snowflake", false],
+        ["fa-regular  fa-snowflake", false, "fa-solid  fa-fire", false],
         ["fa-solid fa-droplet", false, "fa-solid fa-droplet-slash", false],
         ["fa-solid fa-wind", false, "fa-solid fa-window-minimize", false],
         ["fa-solid fa-cloud-rain", false, "fa-solid fa-cloud", false],
@@ -17,7 +17,7 @@ const MapPage = () => {
         ["fa-solid fa-car", true, "fa-solid fa-car", false],
         ["fa-solid fa-person", true, "fa-solid fa-person", false],
         ["fa-solid fa-leaf", true, "fa-solid fa-leaf", false],
-        ["fa-solid fa-house-crack", false, "fa-solid fa-house", false],
+        ["fa-solid fa-house", false, "fa-solid fa-house-crack", false],
     ]
     const $ = jQuery;
     const data = [
