@@ -115,3 +115,11 @@
   width: 45%;
   height: 75px;
 }
+.testmeter {
+  width: 5%;
+}
+.Meter {
+  width: 15%;
+  height: 50%;
+  background: linear-gradient(to bottom, green, yellow, orange, red);
+}

@@ -52,11 +52,11 @@ const LandingPage = () => {
                     pointerEvents: "all",
                     userSelect: "all",
                     width: "50%"
-                }} >
-                    <source src='/public/Video.mp4' style={{
+                }}>
+                    <source src='/Video.mp4' style={{
                         pointerEvents: "all",
                         userSelect: "all"
-                    }} type="Video/mp4" />
+                    }} type="video/mp4" />
                 </video>
             </div>
             <div className='section section3 dfcc px-5'>

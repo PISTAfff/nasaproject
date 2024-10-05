@@ -7,6 +7,18 @@ const MapPage = () => {
     const [curIcons, setCurIcons] = useState([["fa-solid fa-temperature-full", false], ["fa-solid fa-droplet", false], ["fa-solid fa-wind", false], ["fa-solid fa-cloud-rain", false], ["fa-solid fa-gauge", false], ["fa-solid fa-car", false], ["fa-solid fa-person", false], ["fa-solid fa-leaf", false], ["fa-solid fa-house-crack", false]]);
     const [report, setReport] = useState("");
     const [curGov, setCurGov] = useState("");
+    const [IconsState, setIconsState] = useState(-1);
+    const Icons = [
+        ["fa-solid  fa-fire", false, "fa-regular  fa-snowflake", false],
+        ["fa-solid fa-droplet", false, "fa-solid fa-droplet-slash", false],
+        ["fa-solid fa-wind", false, "fa-solid fa-window-minimize", false],
+        ["fa-solid fa-cloud-rain", false, "fa-solid fa-cloud", false],
+        ["fa-solid fa-gauge", false, "fa-solid fa-gauge-high", false],
+        ["fa-solid fa-car", true, "fa-solid fa-car", false],
+        ["fa-solid fa-person", true, "fa-solid fa-person", false],
+        ["fa-solid fa-leaf", true, "fa-solid fa-leaf", false],
+        ["fa-solid fa-house-crack", false, "fa-solid fa-house", false],
+    ]
     const $ = jQuery;
     const data = [
         ["Cairo", [30, 50, 12, 3, 1015, 9000000, 20000000, 15, 15]],
@@ -146,9 +158,10 @@ const MapPage = () => {
         }
     }
     function Filter(filter) {
+        setIconsState(filter);
         if (filter == -1) {
             data.forEach(governorate => {
-                $(`#${governorate[0]}`).css("fill", "rgb(255, 173, 67)");
+                $(`#${governorate[0]}`).css("fill", "rgb(145, 145, 145)");
             });
         } else {
             const SwitchIT = filter == 1 || filter == 3 || filter == 5 || filter == 6 || filter == 7;
@@ -162,11 +175,43 @@ const MapPage = () => {
                 $("#" + governorate[0]).attr("style", `fill: rgb(${SwitchIT ? r : g},${(SwitchIT ? g : r) + (filter == 5 || filter == 6 ? 50 : 0)}, 0)`);
 
             });
-
         }
     }
     return (
         <div className=' MapPage dfsc'>
+            {IconsState != -1 && < div className='testmeter h-100 justify-content-center align-items-center d-flex '>
+                {console.log(Icons)}
+                <div className='h-75 w-100 justify-content-center align-items-center d-flex flex-column gap-3'>
+                    {Icons[IconsState][1] ?
+                        <div className='w-100 d-flex justify-content-center align-items-center gap-1'>
+                            <i class={`${Icons[IconsState][0]} mt-1`} style={{
+                                fontSize: "10px"
+                            }}></i>
+                            <i class={`${Icons[IconsState][0]}`}></i>
+                            <i class={`${Icons[IconsState][0]} mt-1`} style={{
+                                fontSize: "10px",
+                            }}></i>
+                        </div>
+                        :
+                        <i class={`${Icons[IconsState][0]}`}></i>
+                    }
+                    <div className="Meter rounded"></div>
+                    {Icons[IconsState][3] ?
+                        <div className='w-100 d-flex justify-content-center align-items-center gap-1'>
+                            <i class={`${Icons[IconsState][2]} mt-1`} style={{
+                                fontSize: "10px"
+                            }}></i>
+                            <i class={`${Icons[IconsState][2]}`}></i>
+                            <i class={`${Icons[IconsState][2]} mt-1`} style={{
+                                fontSize: "10px",
+                            }}></i>
+                        </div>
+                        :
+                        <i class={`${Icons[IconsState][2]}`}></i>
+                    }
+                </div>
+            </div>
+            }
             <div className='MapArea dfcc w-75 h-100'>
                 <div className='Maps'>
                     <div className="Map dfcc" alt="" >
@@ -426,44 +471,90 @@ const MapPage = () => {
                     </ul>
                 </span>
             </div>
-            {report == "" ?
-                ActivatedGov == "" ?
-                    <div className='RightArea bg-white w-25 dfCcc'>
-                        <header className='dfcc w-100 fw-bolder fs-3 px-1'
-                            style={{
-                                fontFamily: "monospace",
-                                height: "115px",
-                                marginTop: "9vh",
-                            }}
-                        >
-                            Choose a Region
-                        </header>
-                        <select className='pointer px-3 py-2 mt-3 rounded-2 w-75'
-                            style={{
-                                backgroundColor: "var(--main-color)",
-                                color: "var(--main-bg-color)",
-                            }}
-                            onChange={(e) => setActivatedGov(e.target.value)}
-                        >
-                            <option value="">Choose a Region</option>
-                            {Object.keys(rawdata).map((gov, index) => (
-                                <option key={index} value={gov}>{gov}</option>
-                            ))}
-                        </select>
-                        <p className='py-4 fw-bolder'>or</p>
-                        <button className='Button py-2 mt-3 px-3 rounded-2'
-                            style={{
-                                backgroundColor: "var(--main-color)",
-                                color: "var(--main-bg-color)",
-                            }}
-                            onClick={() => getRandomReport("")}
-                        >
-                            Get A Random Region
-                        </button>
-                    </div>
+            {
+                report == "" ?
+                    ActivatedGov == "" ?
+                        <div className='RightArea bg-white w-25 dfCcc'>
+                            <header className='dfcc w-100 fw-bolder fs-3 px-1'
+                                style={{
+                                    fontFamily: "monospace",
+                                    height: "115px",
+                                    marginTop: "9vh",
+                                }}
+                            >
+                                Choose a Region
+                            </header>
+                            <select className='pointer px-3 py-2 mt-3 rounded-2 w-75'
+                                style={{
+                                    backgroundColor: "var(--main-color)",
+                                    color: "var(--main-bg-color)",
+                                }}
+                                onChange={(e) => setActivatedGov(e.target.value)}
+                            >
+                                <option value="">Choose a Region</option>
+                                {Object.keys(rawdata).map((gov, index) => (
+                                    <option key={index} value={gov}>{gov}</option>
+                                ))}
+                            </select>
+                            <p className='py-4 fw-bolder'>or</p>
+                            <button className='Button py-2 mt-3 px-3 rounded-2'
+                                style={{
+                                    backgroundColor: "var(--main-color)",
+                                    color: "var(--main-bg-color)",
+                                }}
+                                onClick={() => getRandomReport("")}
+                            >
+                                Get A Random Region
+                            </button>
+                        </div>
+                        :
+                        <div className='RightArea bg-white w-25 dfCsc justify-content-around'>
+                            <header className='w-100 fw-bolder fs-1 dfCcc'
+                                style={{
+                                    fontFamily: "monospace",
+                                    height: "115px",
+                                    marginTop: "9vh",
+                                }}
+
+                            >
+                                {ActivatedGov}
+                                <hr className='w-75' />
+                            </header>
+                            <ul className='dfcc w-100 justify-content-start gap-3 px-5' style={{
+                                flexWrap: "wrap",
+                            }}>
+                                {curIcons.map((icon, index) => (
+                                    <li key={index} className={`dfCcc rounded-1 gap-3 stats ${icon[1] && "Active"}`} id={dataorder[index][1]}
+                                    >
+                                        <i className={icon[0]} aria-hidden="true" />
+                                        {curData[index] + dataorder[index][0]}
+                                    </li>
+                                ))}
+                            </ul>
+                            <div className='w-100 dfcc justify-content-between px-4'>
+                                <button className='Button Cancel py-2 px-3 rounded-2'
+                                    style={{
+                                        color: "black",
+                                        backgroundColor: "var(--border-color)",
+                                    }}
+                                    onClick={() => { setActivatedGov(""); setReport(""); }}
+                                >
+                                    Cancel
+                                </button>
+                                <button className='Button py-2 px-3 rounded-2'
+                                    style={{
+                                        backgroundColor: "var(--main-color)",
+                                        color: "var(--main-bg-color)",
+                                    }}
+                                    onClick={() => CreateReport(ActivatedGov)}
+                                >
+                                    Create Report
+                                </button>
+                            </div>
+                        </div>
                     :
-                    <div className='RightArea bg-white w-25 dfCsc justify-content-around'>
-                        <header className='w-100 fw-bolder fs-1 dfCcc'
+                    <div className='RightArea bg-white w-25 dfCsc justify-content-between'>
+                        <header className='w-100 fw-bolder fs-1 dfCcc py-5'
                             style={{
                                 fontFamily: "monospace",
                                 height: "115px",
@@ -471,21 +562,41 @@ const MapPage = () => {
                             }}
 
                         >
-                            {ActivatedGov}
-                            <hr className='w-75' />
+                            {report[0]}
+                            <hr className='w-75 py-3' />
                         </header>
-                        <ul className='dfcc w-100 justify-content-start gap-3 px-5' style={{
-                            flexWrap: "wrap",
+                        <span className='w-100 px-4 dfcc'>{report[1]}</span>
+
+                        <ul className='px-4 dfCcc align-items-start gap-2 w-100' style={{
+                            position: "relative",
+                            top: "-10px",
                         }}>
-                            {curIcons.map((icon, index) => (
-                                <li key={index} className={`dfCcc rounded-1 gap-3 stats ${icon[1] && "Active"}`} id={dataorder[index][1]}
-                                >
-                                    <i className={icon[0]} aria-hidden="true" />
-                                    {curData[index] + dataorder[index][0]}
-                                </li>
-                            ))}
+                            {
+                                report[2].map((info, index) => (
+                                    <li className=' dfsc w-100 gap-3' key={index}>
+                                        {info}
+                                        <i className="fa fa-arrow-circle-up" aria-hidden="true"
+                                            style={{
+                                                color: "#2A7F62"
+                                            }}
+                                        />
+                                    </li>
+                                ))
+                            }
+                            {
+                                report[3].map((info, index) => (
+                                    <li className=' dfsc w-100 gap-3' key={index}>
+                                        {info}
+                                        <i className="fa fa-arrow-circle-down" aria-hidden="true"
+                                            style={{
+                                                color: "#CB4335"
+                                            }}
+                                        />
+                                    </li>
+                                ))
+                            }
                         </ul>
-                        <div className='w-100 dfcc justify-content-between px-4'>
+                        <div className='ButtonContainer w-100 dfcc justify-content-between align-items-end py-4 px-4'>
                             <button className='Button Cancel py-2 px-3 rounded-2'
                                 style={{
                                     color: "black",
@@ -500,79 +611,15 @@ const MapPage = () => {
                                     backgroundColor: "var(--main-color)",
                                     color: "var(--main-bg-color)",
                                 }}
-                                onClick={() => CreateReport(ActivatedGov)}
+                                onClick={() => setReport("")}
                             >
-                                Create Report
+                                See Stats
                             </button>
                         </div>
                     </div>
-                :
-                <div className='RightArea bg-white w-25 dfCsc justify-content-between'>
-                    <header className='w-100 fw-bolder fs-1 dfCcc py-5'
-                        style={{
-                            fontFamily: "monospace",
-                            height: "115px",
-                            marginTop: "9vh",
-                        }}
+            }
 
-                    >
-                        {report[0]}
-                        <hr className='w-75 py-3' />
-                    </header>
-                    <span className='w-100 px-4 dfcc'>{report[1]}</span>
-
-                    <ul className='px-4 dfCcc align-items-start gap-2 w-100' style={{
-                        position: "relative",
-                        top: "-10px",
-                    }}>
-                        {
-                            report[2].map((info, index) => (
-                                <li className=' dfsc w-100 gap-3' key={index}>
-                                    {info}
-                                    <i className="fa fa-arrow-circle-up" aria-hidden="true"
-                                        style={{
-                                            color: "#2A7F62"
-                                        }}
-                                    />
-                                </li>
-                            ))
-                        }
-                        {
-                            report[3].map((info, index) => (
-                                <li className=' dfsc w-100 gap-3' key={index}>
-                                    {info}
-                                    <i className="fa fa-arrow-circle-down" aria-hidden="true"
-                                        style={{
-                                            color: "#CB4335"
-                                        }}
-                                    />
-                                </li>
-                            ))
-                        }
-                    </ul>
-                    <div className='ButtonContainer w-100 dfcc justify-content-between align-items-end py-4 px-4'>
-                        <button className='Button Cancel py-2 px-3 rounded-2'
-                            style={{
-                                color: "black",
-                                backgroundColor: "var(--border-color)",
-                            }}
-                            onClick={() => { setActivatedGov(""); setReport(""); }}
-                        >
-                            Cancel
-                        </button>
-                        <button className='Button py-2 px-3 rounded-2'
-                            style={{
-                                backgroundColor: "var(--main-color)",
-                                color: "var(--main-bg-color)",
-                            }}
-                            onClick={() => setReport("")}
-                        >
-                            See Stats
-                        </button>
-                    </div>
-                </div>}
-
-        </div>
+        </div >
     )
 }
 
