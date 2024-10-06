@@ -39,14 +39,16 @@ const LandingPage = () => {
                         text="Explore More" bgColor="var(--main-color)" color="white" />
                 </div>
             </div>
-            <div className="section dfcc  justify-content-around px-5">
-                <div className='dfCcc h-100 gap-5 rightBorder align-items-start' style={{
+            <div className="section dfcc  justify-content-around px-5 flex-row-reverse">
+                <div className='dfCcc h-100 gap-5 rightBorder align-items-center' style={{
                     width: "35%"
                 }}>
-                    <header className='dfsc w-50 fs-1 fw-bolder'>Climate</header>
-                    <p className='fs-5 w-75 dfsc '>
-                        A video About Climate Awareness : Together To Improve The Enviroment
-                    </p>
+                    <div className='w-75 h-100'>
+                        <header className='dfsc w-50 fs-1 fw-bolder'>Climate</header>
+                        <p className='fs-5 w-100 dfsc '>
+                            A video About Climate Awareness : Together To Improve The Enviroment
+                        </p>
+                    </div>
                 </div>
                 <video controls className='VideoArea' style={{
                     pointerEvents: "all",
@@ -76,7 +78,7 @@ const LandingPage = () => {
                 <div className='section3Img'>
                 </div>
             </div>
-            <div className='dfcc justify-content-around mt-5'>
+            <div className='dfcc justify-content-around mt-5 '>
                 <div className='section2 w-50 rightBorder'></div>
                 <div className='dfCcc px-5 h-100 gap-5 align-items-start' style={{
                     width: "50%"
@@ -88,6 +90,22 @@ const LandingPage = () => {
                         }}>
                         Learn About Your planet, See How You may be damaging it
                     </p>
+                </div>
+            </div>
+            <div className='section section4 dfcc px-5 mt-5'>
+                <div className='dfCcc px-5 h-100 gap-5 align-items-start text-white' style={{
+                    width: "50%"
+                }}>
+                    <header className='dfsc w-50 fs-1 fw-bolder'>Adventures Of Abu El-Izz </header>
+                    <p className='fs-5 w-75 dfsc '>
+                        Join Abu El-izz on his Journey as he discovers The Climate World And Saves Our Planet
+                    </p>
+                    <Button onClick={() => {
+                        window.location.href = 'https://mega.nz/file/5yUkWIhI#CKj0dEDpw3CsQlX4R55D5052TI9TNJV-gwd4Y3BiL1U';
+                    }}
+                        text="Download" bgColor="var(--main-color)" color="white" />
+                </div>
+                <div className='section4Img'>
                 </div>
             </div>
         </div>
